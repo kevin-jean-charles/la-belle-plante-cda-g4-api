@@ -1,8 +1,12 @@
 {
+  "name": "la-belle-plante-cda-g4-api",
+  "version": "0.0.0",
+  "description: "",
   "scripts": {
-  "start": "node server.js"
+    "start": "node server.js",
+    "watch": "json-server --watch db.json"
   },
-  "devDependencies": {
+  "dependencies": {
     "json-server": "^0.17.0"
   }
 }
