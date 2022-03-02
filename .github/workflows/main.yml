@@ -6,22 +6,12 @@ on:
   workflow_dispatch:
 
 jobs:
-
   deploy: 
-    needs: build
     runs-on: ubuntu-latest
-
     steps: 
-    # - name: Dowload artifact
-    #   uses: actions/download-artifact@v2
-    #   with: 
-    #     name: devops-test-${{ github.run_id }}-${{ github.run_number }} 
-    #     path: './build'
-    
-    #  TO COMPLETE TO DEPLOY
      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
+     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+       with:
           heroku_api_key: ${{secret.HEROKU_API_KEY}}
           heroku_app_name: "la-belle-plante-cda-g4-api" #Must be unique in Heroku
           heroku_email: "kevin.jean-charles@outlook.fr"
